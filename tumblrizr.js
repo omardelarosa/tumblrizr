@@ -7,9 +7,9 @@
 // enclosed function call for minimum footprint
 (function($){
 	//definte tumblrize function
-	$.fn.tumblrize = function(url, target){
+	$.fn.tumblrize = function(url, callback){
 		//set target container to value of target or the host object;
-		var target_container = target || $(this),
+		var target_container = $(this),
 			//set url of tumblr content
 			url = url,
 			//create script element in DOM
@@ -30,6 +30,11 @@
 					target_container.html(tumblr_content)
 					// reset variable created by tumblr's response javascript.
 					tumblr_api_read = undefined;
+					// if there's a callback function...
+					if (callback) {
+						// call it and send the event object and the $target_container
+						callback(e,$target_container)
+					}
 				} else {
 					console.log("Error! Invalid response!")
 					return this
@@ -46,7 +51,7 @@
 		return this;
 	}
 	//alias the function to jQuery.tumblrize	
-	$.tumblrize = $.fn.tumblrize
+	$.fn.tumblrize
 
 //immediately call and extend jQuery
 }(jQuery));

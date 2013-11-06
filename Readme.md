@@ -2,9 +2,9 @@
 
 Tumblrizr is a jQuery plugin that allows you to fetch the content from your Tumblr pages and plug it directly into your own website's pages using AJAX. To use it in your pages, just download either of the following:
 
-###[Development Version 0.1 ](http://github.com)
+###[Development Version 0.1 ](http://omardelarosa.com/tumblrizr/tumblrizr.js)
 
-###[Production-ready, Minified Version 0.1](http://github.com)
+###[Production-ready, Minified Version 0.1](http://omardelarosa.com/tumblrizr/tumblrizr.min.js)
 
 
 ##Usage:

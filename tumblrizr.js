@@ -4,9 +4,9 @@
 // ==============================================
 // ==============================================
 
-// enclosed function call for minimum footprint
+// enclose the plugin code in a single function call for minimum footprint
 (function($){
-	//definte tumblrize function
+	//define tumblrize function
 	$.fn.tumblrize = function(url, callback){
 		//set target container to value of target or the host object;
 		var target_container = $(this),
@@ -36,6 +36,7 @@
 						callback(e,$target_container)
 					}
 				} else {
+					// error message
 					console.log("Error! Invalid response!")
 					return this
 				}

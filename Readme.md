@@ -25,6 +25,17 @@ var target_element = $('#id_of_element'),
 var url_to_tumblr_content = "http://yourname.tumblr.com/staticpage/json";
 ```
 
+#### Step 2B:
+
+- If you want to set a callback function, set that to a variable:
+
+```
+var some_callback = function(e,target){
+	console.log("I was called by ", target, "and my event object is ",e);
+}
+
+```
+
 #### Step 3:
 
 - Call the **.tumblrizr** method of the jQuery-fied target.
@@ -33,6 +44,15 @@ var url_to_tumblr_content = "http://yourname.tumblr.com/staticpage/json";
 	target_element.tumblrizr("http://yourname.tumblr.com/staticpage")
 ```
 - Your Tumblr page's content should then appear inside of your target element.
+
+#### Step 3 (alt):
+
+- Call the **.tumblrizr** method of the jQuery-fied target and pass in your callback function
+
+```
+	target_element.tumblrizr("http://yourname.tumblr.com/staticpage", some_callback)
+```
+
 
 ##Viewing Raw Tumblr Data
 

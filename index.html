@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {	
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;	
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>Tumblrizr</title>
+
+</head>
+<body>
+<h1>Tumblrizr</h1>
+
+<p>Tumblrizr is a jQuery plugin that allows you to fetch the content from your Tumblr pages and plug it directly into your own website's pages using AJAX.</p>
+
+<h2>Usage:</h2>
+
+<h4>Step 1:</h4>
+
+<ul>
+<li>Select your target element by ID or class using jQuery.</li>
+</ul>
+
+
+<pre><code>var target_element = $('#id_of_element'),
+</code></pre>
+
+<h4>Step 2:</h4>
+
+<ul>
+<li>Set your Tumblr content URL (Don't forget to end it in /json).</li>
+</ul>
+
+
+<pre><code>var url_to_tumblr_content = "http://yourname.tumblr.com/staticpage/json";
+</code></pre>
+
+<h4>Step 3:</h4>
+
+<ul>
+<li>Call the <strong>.tumblrizr</strong> method of the jQuery-fied target.</li>
+</ul>
+
+
+<pre><code>    target_element.tumblrizr("http://yourname.tumblr.com/staticpage")
+</code></pre>
+
+<ul>
+<li>Your Tumblr page's content should then appear inside of your target element.</li>
+</ul>
+
+
+<h2>Viewing Raw Tumblr Data</h2>
+
+<p>After appending your Tumblr content to an element, the original Tumblr response is stored in the target element's data store.  To access the original data, try this:
+<code>
+    target_element.data("tumblr_data");
+</code></p>
+
+<p>Your console should return a JSON-formatted object conaining the original Tumblr response along the lines of:</p>
+
+<pre><code>{
+    "tumblelog": {
+        "title": "page title goes here",
+        "description": "",
+        "name": "your_tumblr_user_name",
+        "timezone": "US\/Eastern",
+        "cname": false,
+        "feeds": [
+
+        ]
+    },
+    "posts": [
+        {
+            "id": null,
+            "url": "",
+            "url-with-slug": "",
+            "type": "regular",
+            "date-gmt": " GMT",
+            "date": "Wed, 31 Dec 1969 19:00:00",
+            "bookmarklet": null,
+            "mobile": null,
+            "feed-item": "",
+            "from-feed-id": 0,
+            "unix-timestamp": 1383682011,
+            "format": "html",
+            "reblog-key": "TmN3ujDJ",
+            "slug": "about",
+            "regular-title": "about",
+            "regular-body": "&lt;p&gt;Some random tumblr body content&lt;/p&gt;"
+        }
+    ]
+};
+</code></pre>
+
+<h3>Fine Print:</h3>
+
+<p>This plugin is in no way endorsed or officially related to Tumblr.  For more information about using Tumblr data or its API, please visit <a href="http://www.tumblr.com/docs/en/api/v2">their very well-documented API page</a>.</p>
+</body>
+</html>

@@ -158,7 +158,11 @@ sup {
 <body>
 <h1>Tumblrizr</h1>
 
-<p>Tumblrizr is a jQuery plugin that allows you to fetch the content from your Tumblr pages and plug it directly into your own website's pages using AJAX.</p>
+<p>Tumblrizr is a jQuery plugin that allows you to fetch the content from your Tumblr pages and plug it directly into your own website's pages using AJAX. To use it in your pages, just download either of the following:</p>
+
+<h3><a href="http://omardelarosa.com/tumblrizr/tumblrizr.js">Development Version 0.1 </a></h3>
+
+<h3><a href="http://omardelarosa.com/tumblrizr/tumblrizr.min.js">Production-ready, Minified Version 0.1</a></h3>
 
 <h2>Usage:</h2>
 
@@ -199,10 +203,10 @@ sup {
 
 <h2>Viewing Raw Tumblr Data</h2>
 
-<p>After appending your Tumblr content to an element, the original Tumblr response is stored in the target element's data store.  To access the original data, try this:
-<code>
-    target_element.data("tumblr_data");
-</code></p>
+<p>After appending your Tumblr content to an element, the original Tumblr response is stored in the target element's data store.  To access the original data, try this:</p>
+
+<pre><code>    target_element.data("tumblr_data");
+</code></pre>
 
 <p>Your console should return a JSON-formatted object conaining the original Tumblr response along the lines of:</p>
 

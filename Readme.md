@@ -41,7 +41,7 @@ var some_callback = function(e,target){
 - Call the **.tumblrizr** method of the jQuery-fied target.
 
 ```
-	target_element.tumblrizr("http://yourname.tumblr.com/staticpage")
+	target_element.tumblrize("http://yourname.tumblr.com/staticpage")
 ```
 - Your Tumblr page's content should then appear inside of your target element.
 
@@ -50,7 +50,7 @@ var some_callback = function(e,target){
 - Call the **.tumblrizr** method of the jQuery-fied target and pass in your callback function
 
 ```
-	target_element.tumblrizr("http://yourname.tumblr.com/staticpage", some_callback)
+	target_element.tumblrize("http://yourname.tumblr.com/staticpage", some_callback)
 ```
 
 
